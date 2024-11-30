@@ -4,7 +4,7 @@ lib.addCommand(Config.GreenzonesCommand, {
 }, function(source, args, raw)
     local source = source
     local ped = GetPlayerPed(source)
-    lib.callback('lation_greenzones:adminZone', source, cb)
+    lib.callback.await('lation_greenzones:adminZone', source)
 end)
 
 lib.addCommand(Config.GreenzonesClearCommand, {
@@ -13,7 +13,7 @@ lib.addCommand(Config.GreenzonesClearCommand, {
 }, function(source, args, raw)
     local source = source
     local ped = GetPlayerPed(source)
-    lib.callback('lation_greenzones:adminZoneClear', source, cb)
+    lib.callback.await('lation_greenzones:adminZoneClear', source)
 end)
 
 lib.callback.register('lation_greenzones:data', function(source, zoneCoords, zoneName, textUI, textUIColor, textUIPosition, zoneSize, disarm, invincible, speedLimit, blipID, blipColor)

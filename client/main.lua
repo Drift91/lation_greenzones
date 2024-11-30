@@ -219,7 +219,7 @@ lib.callback.register('lation_greenzones:adminZone', function()
         speedLimit = adminZoneMenu[8]
         blipID = adminZoneMenu[9]
         blipColor = adminZoneMenu[10]
-        lib.callback('lation_greenzones:data', false, cb, pedCoords, zoneName, textUI, textUIColor, textUIPosition, zoneSize, disarm, invincible, speedLimit, blipID, blipColor)
+        lib.callback.await('lation_greenzones:data', false, pedCoords, zoneName, textUI, textUIColor, textUIPosition, zoneSize, disarm, invincible, speedLimit, blipID, blipColor)
     end
 end)
 
@@ -306,7 +306,7 @@ lib.callback.register('lation_greenzones:adminZoneClear', function()
         cancel = true
     })
     if confirm == 'confirm' then
-        lib.callback('lation_greenzones:deleteZone')
+        lib.callback.await('lation_greenzones:deleteZone', false)
     else
         return
     end
