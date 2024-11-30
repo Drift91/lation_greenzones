@@ -1,6 +1,6 @@
 lib.addCommand(Config.GreenzonesCommand, {
     help = 'Create a temporary greenzone',
-    restricted = 'group.admin'
+    restricted = Config.GreenzonesAceGroup
 }, function(source, args, raw)
     local source = source
     local ped = GetPlayerPed(source)
@@ -9,7 +9,7 @@ end)
 
 lib.addCommand(Config.GreenzonesClearCommand, {
     help = 'Delete a temporary greenzone',
-    restricted = 'group.admin'
+    restricted = Config.GreenzonesAceGroup
 }, function(source, args, raw)
     local source = source
     local ped = GetPlayerPed(source)
