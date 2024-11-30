@@ -271,7 +271,7 @@ end)
 
 -- The function that creates blips for Greenzones created in-game
 function createBlip(blipName, blipCoords, blipRadius, blipID, blipColor)
-    local radius = ESX.Math.Round(blipRadius, 1)
+    local radius = lib.math.round(blipRadius, 1)
     radiusBlip = AddBlipForRadius(blipCoords, radius)
     SetBlipColour(radiusBlip, blipColor)
     SetBlipAlpha(radiusBlip, 100)

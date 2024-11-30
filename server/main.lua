@@ -3,7 +3,7 @@ lib.addCommand(Config.GreenzonesCommand, {
     restricted = 'group.admin'
 }, function(source, args, raw)
     local source = source
-    local ped = ESX.GetPlayerFromId(source)
+    local ped = GetPlayerPed(source)
     lib.callback('lation_greenzones:adminZone', source, cb)
 end)
 
@@ -12,7 +12,7 @@ lib.addCommand(Config.GreenzonesClearCommand, {
     restricted = 'group.admin'
 }, function(source, args, raw)
     local source = source
-    local ped = ESX.GetPlayerFromId(source)
+    local ped = GetPlayerPed(source)
     lib.callback('lation_greenzones:adminZoneClear', source, cb)
 end)
 
