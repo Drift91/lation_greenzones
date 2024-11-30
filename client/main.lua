@@ -150,6 +150,9 @@ for k, v in pairs(Config.GreenZones) do
         if v.disableFiring then
             DisablePlayerFiring(cache.ped, true)
         end
+        if v.setInvincible then
+            SetEntityInvincible(cache.ped, true)
+        end
         if v.enableSpeedLimits then
             vehicle = GetVehiclePedIsIn(cache.ped, false) -- This isn't 100% needed, could be commented out if performance is impacted too much. Only difference would be if player spawns into this zone, they can drive at any speed until exit/re-enter
             SetVehicleMaxSpeed(vehicle, speed)
@@ -265,6 +268,9 @@ AddEventHandler('lation_greenzones:createAdminZone', function(zoneCoords, zoneNa
         if speedLimit ~= 0 then
             vehicle = GetVehiclePedIsIn(cache.ped, false)
             SetVehicleMaxSpeed(vehicle, speed)
+        end
+        if invincible then
+            SetEntityInvincible(cache.ped, true)
         end
     end
 end)
